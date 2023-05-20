@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Les petits plats, outil de recettes de cuisine"
+      name="description"
+    />
+    <meta
+      content="Les petits plats, outil de recettes de cuisine"
+      name="keywords"
+    />
+    <link rel="icon" href="./assets/image/icone.png" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5f2e0ae9aa.js" crossorigin="anonymous"></script>
+    <title>Les petits plats</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="./assets/image/logo.svg" class="header__logo" alt="Logo : Les petits plats"
+      />
+    </header>
+
+    <main class="main">
+      <section class="search">
+        <div class="search__input-group">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette..."
+          />
+          <button class="search__button">
+            <img src="./assets/image/loupe.svg" alt="Search" />
+          </button>
+        </div>
+      </section>
+
+      <section id="tags__selected">
+        <!-- ARRAY OF TAGS EN JAVASCRIPT -->
+        <div class="tag__ingredients--wrapper"></div>
+        <div class="tag__appliances--wrapper"></div>
+        <div class="tag__ustensils--wrapper"></div>
+      </section>
+
+      <section id="filters">
+        <div class="filter__ingredients"></div>
+        <div class="filter__appliances"></div>
+        <div class="filter__ustensils"></div>
+      </section>
+      
+      <section id="recipes__cards">
+        <!-- CARDS COMPONENT JAVASCRIPTS recipes_cards.js -->
+      </section>
+      <span class="no-result-message"></span>
+    </main>
+
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#"><i class="fa-solid fa-arrow-up-long fa-2xl"></i></a>
+        </p>
+      </div>  
+    </footer>
+
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/recipes.js"></script>
+    <script src="./scripts/utils/sortBtn.js"></script>
+    <script src="./scripts/utils/sortBtnList.js"></script>
+    <script src="./scripts/utils/tags.js"></script>
+    <script src="./scripts/utils/searchInput.js"></script> 
+    <script src="./scripts/utils/searchInputBtn.js"></script> 
+  </body>
+</html>
