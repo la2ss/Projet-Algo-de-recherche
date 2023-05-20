@@ -3,7 +3,7 @@
 const searchBarInput = document.querySelector('.search__input');
 const noResultText = document.querySelector('.no-result-message');
 
-/** Fonction de recherche de l'objet Array **/
+/** Fonction de recherche natives **/
 function searchLive() {
   let tagsUsed = false;
   recipesToDisplay = [];
@@ -13,23 +13,26 @@ function searchLive() {
   if (searchBarInput.value.length > 2) {
     mainInput = searchBarInput.value;
 
-    recipesToDisplay = recipes.filter((recipe) => {
+    for (let i = 0; i < recipes.length; i += 1) {
       let recipeIsMatching = false;
-      if (recipe.name.toLowerCase().includes(mainInput.toLowerCase())
-        || recipe.description.toLowerCase().includes(mainInput.toLowerCase())
-        || recipe.ingredients.forEach(({ ingredient }) => {
-          if (ingredient.toLowerCase().includes(mainInput.toLowerCase())) {
-            recipeIsMatching = true;
-          }
-        })) {
+      if (recipes[i].name.toLowerCase().includes(mainInput.toLowerCase())) {
+        recipeIsMatching = true;
+      } else if (recipes[i].description.toLowerCase().includes(mainInput.toLowerCase())) {
         recipeIsMatching = true;
       }
-      return recipeIsMatching;
-    });
-
+      for (let j = 0; j < recipes[i].ingredients.length; j += 1) {
+        if (recipes[i].ingredients[j].ingredient.toLowerCase().includes(mainInput.toLowerCase())) {
+          recipeIsMatching = true;
+        }
+      }
+      if (recipeIsMatching === true) {
+       recipesToDisplay.push(recipes[i]);
+      }
+    }
     /* Remplir les filtres avec le tableau retourné */
     fillFilters(recipesToDisplay);
   }
+
 
   /* Si l'un de ses tableaux comportent un élément alors un tag est utilisé, applique donc la fonction filteredRecipesWithTags avec comme callback recipesToDisplay;
   Les tableaux sont définis dans tags.js dans la fonction filteredRecipesWithTags. */
