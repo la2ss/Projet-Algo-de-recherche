@@ -17,7 +17,7 @@ function getSearchIngredients() {
   return (filterRender);
 }
 
-/* Used on filters_recipes.js */ 
+/* Used on sortBtn.js */ 
 // eslint-disable-next-line no-unused-vars
 function inputIngredient() {
   const searchInputIngredient = document.getElementById('ingredients-input');
@@ -47,7 +47,7 @@ function getSearchAppliances() {
   return (filterRender);
 }
 
-/* Used on filters_recipes.js */ 
+/*Used on sortBtn.js */ 
 // eslint-disable-next-line no-unused-vars
 function inputAppliance() {
   const searchInputAppliance = document.getElementById('appliances-input');
@@ -77,7 +77,7 @@ function getSearchUstensils() {
   return (filterRender);
 }
 
-/* Used on filters_recipes.js */ 
+/* Used on sortBtn.js */ 
 // eslint-disable-next-line no-unused-vars
 function inputUstensil() {
   const searchInputUstensil = document.getElementById('ustensils-input');

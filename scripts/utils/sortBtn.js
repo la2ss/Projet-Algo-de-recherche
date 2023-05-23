@@ -2,7 +2,7 @@
 
 /*** function filterAppliances créer et fait apparaitre le filtre Ingrédient. ***/
 
-/** filterIngredients is initiated on index.js **/
+/** filterIngredients est ds index.js **/
 // eslint-disable-next-line no-unused-vars
 function filterIngredients() {
 
@@ -60,7 +60,7 @@ function filterIngredients() {
       ingredientsListBox.style.display = 'flex';
       inputIngredients.focus();
       
-    /* défini dans filters_input */
+    /*Définit dans searchInputBtn.js */
       // eslint-disable-next-line no-undef
       inputIngredient();
     }
@@ -101,7 +101,7 @@ function filterIngredients() {
 
 
 /*** function filterAppliances créer et fait apparaitre le filtre appareil. ***/
-/** filterAppliances() is initiated on index.js **/
+/** filterAppliances() est ds index.js **/
 // eslint-disable-next-line no-unused-vars
 function filterAppliances() {
   
@@ -158,11 +158,11 @@ function filterAppliances() {
       appliancesListBox.style.display = 'flex';
       inputAppliances.focus();
 
-    /* Défini dans filters_input */
+    /* Définit dans searchInputBtn.js */
     // eslint-disable-next-line no-undef
     inputAppliance();
     }
-    /* Défini dans tags.js */
+    /* Définit dans tags.js */
     // eslint-disable-next-line no-undef
     addTagFilterAppliances();
   });
@@ -197,7 +197,7 @@ function filterAppliances() {
 }
 
 /*** function filterUstensils créer et fait apparaitre le filtre ustensil. ***/
-/** filterUstensils() is initiated on index.js **/
+/** filterUstensils() is initiated on index.js ligne 34 **/
 // eslint-disable-next-line no-unused-vars
 function filterUstensils() {
   
@@ -254,11 +254,11 @@ function filterUstensils() {
       ustensilsListBox.style.display = 'flex';
       inputUstensils.focus();
 
-      /* Défini dans Filters_input */
+      /*Définit dans searchInputBtn.js*/
       // eslint-disable-next-line no-undef
       inputUstensil();
     }
-    /* Défini dans tags.js */
+    /* Définit dans tags.js */
     // eslint-disable-next-line no-undef
     addTagFilterUstensils();
   });

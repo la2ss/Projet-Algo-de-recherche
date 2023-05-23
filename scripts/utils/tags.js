@@ -1,4 +1,4 @@
-/** searchLive is defined in search_bar.js **/
+/** searchLive est definit ds searchInput.js **/
 /* eslint-disable no-undef */
 /* eslint-disable no-loop-func */
 /* eslint-disable no-restricted-syntax */
@@ -88,7 +88,6 @@ function addTagFilterAppliances() {
         deleteIconImg.style.width = '20px';
         deleteTagIcon.addEventListener('click', () => {
           tagApplianceContainer.remove();
-          // défini dans search_bar.js 
           searchLive();
           return false;
         });
@@ -96,7 +95,6 @@ function addTagFilterAppliances() {
         tagApplianceContainer.appendChild(tagAppliance);
         tagApplianceContainer.appendChild(deleteTagIcon);
         deleteTagIcon.appendChild(deleteIconImg);
-        // défini dans search_bar.js
         searchLive();
       });
     });
@@ -128,7 +126,6 @@ function addTagFilterUstensils() {
         deleteIconImg.style.width = '20px';
         deleteTagIcon.addEventListener('click', () => {
           tagUstensilContainer.remove();
-          // défini dans search_bar.js
           searchLive();
           return false;
         });
@@ -136,7 +133,6 @@ function addTagFilterUstensils() {
         tagUstensilContainer.appendChild(tagUstensil);
         tagUstensilContainer.appendChild(deleteTagIcon);
         deleteTagIcon.appendChild(deleteIconImg);
-        // défini dans search_bar.js
         searchLive();
       });
     });
