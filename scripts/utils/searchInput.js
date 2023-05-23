@@ -50,7 +50,8 @@ function searchLive() {
     displayData(recipesToDisplay);
   } else {
     displayData(recipesToDisplay);
-    noResultText.innerHTML = '<p>Aucune recette ne correspond à votre critère...</p>';
+    noResultText.innerHTML = '<p>Aucune recette ne correspond à votre critère... vous pouvez chercher ex: tarte au pomme, poisson, etc. </p>';
+    
   }
 
   // Si la barre de recherche est vide ou moins de 3 caractères.
