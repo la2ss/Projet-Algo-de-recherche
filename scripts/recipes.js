@@ -1,5 +1,4 @@
 /** Fonction pour afficher le contenu de 'ingrédients' pour nos cards. **/
-/* getIngredients is used on our factory 'getRecipeCard' */
 
 function getIngredients(ingredients) {
     const column = document.createElement('div');
@@ -66,9 +65,6 @@ function getIngredients(ingredients) {
     recipeDescription.textContent = description;
     recipeDescription.className = 'description';
   
-    // const hidden = document.createElement('div');
-    // hidden.classList.add('is-hidden');
-  
     /* Append section */
     article.appendChild(blankImage);
     article.appendChild(cardHeader);
@@ -79,7 +75,6 @@ function getIngredients(ingredients) {
     article.appendChild(cardInfo);
     cardInfo.appendChild(recipeIngredients);
     cardInfo.appendChild(recipeDescription);
-  //  article.appendChild(hidden);
   
     return (article);
   }

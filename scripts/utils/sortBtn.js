@@ -60,11 +60,11 @@ function filterIngredients() {
       ingredientsListBox.style.display = 'flex';
       inputIngredients.focus();
       
-    /* défini dans filters_input */
+    /* définit dans searchInputBtn.js */
       // eslint-disable-next-line no-undef
       inputIngredient();
     }
-    /* Défini dans tags.js */
+    /* Définit dans tags.js */
     // eslint-disable-next-line no-undef
     addTagFilterIngredients();
   });
@@ -158,11 +158,11 @@ function filterAppliances() {
       appliancesListBox.style.display = 'flex';
       inputAppliances.focus();
 
-    /* Défini dans filters_input */
+    /* Définit dans searchInputBtn.js */
     // eslint-disable-next-line no-undef
     inputAppliance();
     }
-    /* Défini dans tags.js */
+    /* Définit dans tags.js */
     // eslint-disable-next-line no-undef
     addTagFilterAppliances();
   });
@@ -254,11 +254,11 @@ function filterUstensils() {
       ustensilsListBox.style.display = 'flex';
       inputUstensils.focus();
 
-      /* Défini dans Filters_input */
+      /* Définit dans searchInputBtn.js */
       // eslint-disable-next-line no-undef
       inputUstensil();
     }
-    /* Défini dans tags.js */
+    /* Définit dans tags.js */
     // eslint-disable-next-line no-undef
     addTagFilterUstensils();
   });

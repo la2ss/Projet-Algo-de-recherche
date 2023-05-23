@@ -10,17 +10,12 @@ function displayData(recipes) {
   const recipeSection = document.getElementById('recipes__cards');
   recipeSection.innerHTML = '';
   for (const recipe of recipes) {
-    /* getRecipeCard is defined in recipes_cards.js */
+    /* getRecipeCard is defined in recipes.js */
     // eslint-disable-next-line no-undef
     const recipeCard = getRecipeCard(recipe);
     recipeSection.appendChild(recipeCard);
   }
 }
-
-
-
-
-
 
 function init() {
   /* Afficher les recipes */ 
