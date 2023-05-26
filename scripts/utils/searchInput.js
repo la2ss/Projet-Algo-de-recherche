@@ -1,18 +1,21 @@
 
 /* eslint-disable no-undef */
 const searchBarInput = document.querySelector('.search__input');
+const tablo = document.getElementById('servings');
 const noResultText = document.querySelector('.no-result-message');
 
 /** Fonction de recherche de l'objet Array **/
-function searchLive() {
+function searchLive(tagUstensilAlreadyAdded) {
   let tagsUsed = false;
   recipesToDisplay = [];
+  let recipeIsMatchingBinding = false;
   let mainInput;
+  
 
   //Retourne un tableau 'recipeToDisplay'
   if (searchBarInput.value.length > 2) {
     mainInput = searchBarInput.value;
-
+    
     recipesToDisplay = recipes.filter((recipe) => {
       let recipeIsMatching = false;
       if (recipe.name.toLowerCase().includes(mainInput.toLowerCase())
@@ -20,13 +23,16 @@ function searchLive() {
         || recipe.ingredients.forEach(({ ingredient }) => {
           if (ingredient.toLowerCase().includes(mainInput.toLowerCase())) {
             recipeIsMatching = true;
+            recipeIsMatchingBinding = true;
           }
         })) {
         recipeIsMatching = true;
+        recipeIsMatchingBinding = true;
+       
       }
       return recipeIsMatching;
     });
-
+    
     /* Remplir les filtres avec le tableau retourné */
     fillFilters(recipesToDisplay);
   }
@@ -45,21 +51,28 @@ function searchLive() {
   }
 
   /** Message erreur dans le cas d'une mauvaise recherche **/
-  if (recipesToDisplay.length > 0) {
+
+   // Si le tableau de recette n'est pas vide ET que les tags soit utiliser
+  if (recipesToDisplay.length > 0 && recipeIsMatchingBinding || tagUstensilAlreadyAdded) {
     noResultText.innerHTML = '';
     displayData(recipesToDisplay);
   } else {
     displayData(recipesToDisplay);
-    noResultText.innerHTML = '<p>Aucune recette ne correspond à votre critère... vous pouvez chercher ex: tarte au pomme, poisson, etc. </p>';
-    
+    noResultText.innerHTML = '<p>Aucune recette ne correspond à votre critère... vous pouvez chercher ex: tarte au pomme, poisson, etc. </p>'; 
   }
 
-  // Si la barre de recherche est vide ou moins de 3 caractères.
+  if(!searchBarInput.value || searchBarInput.value.length < 3) { 
+    noResultText.innerHTML = '';
+  }
+
+  // Si la barre de recherche est vide ou moins de 3 caractères sans l'utilisation des tags
   if (((searchBarInput.value === '') || (searchBarInput.value.length < 3)) && tagsUsed === false) {
     fillFilters(recipes);
     displayData(recipes);
     noResultText.innerHTML = '';
   }
+
+
 }
 
 

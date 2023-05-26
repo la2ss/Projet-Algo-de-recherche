@@ -49,7 +49,7 @@ function addTagFilterIngredients() {
         deleteIconImg.style.width = '20px';
         
         deleteIconImg.addEventListener('click', () => {
-          tagIngredientContainer.remove();
+          tagIngredientContainer.remove( tagApplianceAlreadyAdded = false);
           searchLive();
           return false;
         });
@@ -57,7 +57,7 @@ function addTagFilterIngredients() {
         tagIngredientContainer.appendChild(tagIngredient);
         tagIngredientContainer.appendChild(deleteTagIcon);
         deleteTagIcon.appendChild(deleteIconImg);
-        searchLive();
+        searchLive( tagApplianceAlreadyAdded);
       });
     });
   }
@@ -88,14 +88,15 @@ function addTagFilterAppliances() {
         deleteIconImg.style.width = '20px';
         deleteTagIcon.addEventListener('click', () => {
           tagApplianceContainer.remove();
-          searchLive();
+          searchLive( tagApplianceAlreadyAdded = false);
           return false;
         });
         tagApplianceWrapper.appendChild(tagApplianceContainer);
         tagApplianceContainer.appendChild(tagAppliance);
         tagApplianceContainer.appendChild(deleteTagIcon);
         deleteTagIcon.appendChild(deleteIconImg);
-        searchLive();
+        searchLive( tagApplianceAlreadyAdded);
+
       });
     });
   }
@@ -105,6 +106,7 @@ function addTagFilterAppliances() {
 
 // eslint-disable-next-line no-unused-vars
 function addTagFilterUstensils() {
+ 
   if (tagUstensilAlreadyAdded === false) {
     tagUstensilAlreadyAdded = true;
     Array.from(filterItemUstensils).forEach((element) => {
@@ -126,14 +128,14 @@ function addTagFilterUstensils() {
         deleteIconImg.style.width = '20px';
         deleteTagIcon.addEventListener('click', () => {
           tagUstensilContainer.remove();
-          searchLive();
+          searchLive( tagUstensilAlreadyAdded = false);
           return false;
         });
         tagUstensilWrapper.appendChild(tagUstensilContainer);
         tagUstensilContainer.appendChild(tagUstensil);
         tagUstensilContainer.appendChild(deleteTagIcon);
         deleteTagIcon.appendChild(deleteIconImg);
-        searchLive();
+        searchLive( tagUstensilAlreadyAdded);
       });
     });
   }
@@ -145,6 +147,7 @@ function addTagFilterUstensils() {
 /* filteredRecipesWithTags */
 // eslint-disable-next-line no-unused-vars
 function filteredRecipesWithTags(recipesToFilter) {
+ 
   /* Faire des tableaux des items afficher pour chaque filtre */ 
   const taggedIngredientsDOM = Array.from(document.querySelectorAll('.tag__ingredients--wrapper .tag__ingredient .tag-blue'));
 
